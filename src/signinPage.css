@@ -1,0 +1,182 @@
+.signindiv{
+    display: flex;
+    flex-direction: row;
+    height: 70vh;
+    width: 80vw;
+    background-color: #bebca126;
+    margin: 4rem;
+    border-radius: 1rem;
+}
+
+.signinphoto{
+    flex: 1;
+    height: 70vh;
+    width: 40vw;
+}
+.signinphoto img{
+    height: 70vh;
+    width: 40vw;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+.signinform{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    align-self: center;
+    height: 70vh;
+    width: 80vw;
+    flex: 1;
+}
+
+.signinform div{
+    height: 5vh;
+    width: 40vw;
+    margin: 1rem;
+}
+
+.signinform div input{
+    height: 5vh;
+    width: 25vw;
+    border: 1px solid yellow;
+    border-radius: 0.5rem;
+    background-color:#41435e ;
+    color: #bebca1;
+}
+
+input::placeholder{
+    color: #bebca1;
+}
+
+input:-webkit-autofill {
+    background-color: #41435e !important; /* Force white background */
+    color: #bebca1 !important;  /* Force black text */
+    -webkit-text-fill-color: #bebca1 !important; /* Ensure text color is applied */
+    transition: background-color 5000s ease-in-out 0s; /* Prevent color reset */
+}
+
+input:focus {
+    border: 2px solid black; 
+    outline: none; 
+}
+
+.signinform-Username input{
+    margin-bottom: 0%;
+}
+.signinform-Username p{
+    margin: 0%;
+    color: #41435e;
+}
+
+.signinform div button{
+    height: 5vh;
+    width: 25vw;
+    border: 1px solid yellow;
+    border-radius: 0.5rem;
+    background-color:#41435e ;
+    color: #bebca1;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (max-width: 830px) {
+    .signindiv {
+        flex-direction: column;
+        height: auto;
+        margin: 2rem;
+    }
+
+    .signinphoto {
+        width: 100%;
+        height: 40vh;
+    }
+    .signinphoto img {
+        width: 100%;
+        height: 30vh;
+        border-radius: 1rem 1rem 0 0;
+    }
+
+    .signinform {
+        width: 100%;
+        height: auto;
+        margin-top: 1rem;
+    }
+
+    .signinform div {
+        width: 80%;
+        margin: 0.7rem auto;
+    }
+
+    .signinform div input,
+    .signinform div button {
+        width: 100%;
+    }
+}
+@media (max-width: 500px) {
+
+    .signinphoto {
+        height: 25vh;
+    }
+    .signinphoto img {
+        height: 30vh;
+    }
+
+    .signinform div {
+        width: 90%;
+        margin: 1.3rem;
+    }
+    .signinform div input{
+        height: 5.9vh;
+        font-size: large;
+    }
+}
+/* 📏 For screens less than 500px */
+@media (max-width: 400px) {
+
+    .signinphoto {
+        height: 25vh;
+    }
+    .signinphoto img {
+        height: 30vh;
+    }
+
+    .signinform div {
+        width: 90%;
+        margin: 0.5rem;
+        padding: 0.2rem;
+    }
+}
+
+/* 📏 For screens less than 300px */
+@media (max-width: 300px) {
+    .signindiv {
+        width: 100%;
+        margin: 0.5rem;
+    }
+
+    .signinphoto {
+        height: 20vh;
+    }
+    .signinphoto img {
+        height: 20vh;
+    }
+
+    .signinform div {
+        width: 95%;
+    }
+
+    .signinform div input,
+    .signinform div button {
+        font-size: 14px;
+        padding: 0.5rem;
+    }
+}
+
+

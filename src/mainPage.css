@@ -1,0 +1,338 @@
+
+.info {
+    color: rgba(0, 0, 0, 0.79);
+    display: flex;
+    flex-direction: row;
+    /* width: 100vw;
+    height: 100vh; */
+    margin: 0%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.info-data{
+    flex: 1;
+    text-align: left;
+    margin-left: 2rem;
+}
+
+.info-photo{
+    flex: 1;
+}
+
+.info-data h1 , h2{
+    margin: 5px;
+}
+
+.info-data h2{
+    font-weight: 400;
+}
+
+.signin{
+    background: transparent;
+    border: 1px solid black;
+    border-radius: 1rem;
+    display: flex;
+    height: 3rem;
+    width: 20rem;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 1rem;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+    gap:10px;
+    background-color: white;
+    color: #4285f4;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+.signin:hover{
+    color:white;
+    background-color: #4285f4;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px); 
+}
+.signin div{
+    align-self: center;
+    font-size:1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+.signin img{
+    height: 2rem;
+    width: 2rem;
+}
+
+.info-photo{
+    align-self: center;
+}
+
+.screenshot{
+    color: rgba(0, 0, 0, 0.79);
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    height: 90vh;
+    margin: 0%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #bebca126;
+    border-radius: 3rem;
+}
+
+.screenshotinfo{
+    display: flex;
+    flex-direction: row;
+}
+
+.screenshot-photo{
+    margin-left: 1rem;
+    flex: 1;
+}
+.screenshot-text{
+    align-self: center;
+    flex: 1;
+    text-align: left;
+    margin-left: 2rem;
+}
+.screenshot-text h2{
+    margin: 2rem;
+}
+.text-purpale{
+    color: purple;
+    font-weight: 800;
+}
+.text-orange{
+    color:orange;
+    font-weight: 800;
+}
+
+.video-container {
+    overflow: hidden;
+}
+
+video {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* 🌟 Responsive Design for Different Screen Sizes */
+
+/* 📏 For screens less than 1050px */
+@media (max-width: 1050px) {
+    .info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        flex-wrap: wrap;
+    }
+
+    .info-photo {
+        order: -1;
+        width: 100%;
+        text-align: center;
+    }
+
+    .info-data {
+        width: 80%;
+        text-align: center;
+        margin: 1rem auto;
+    }
+
+    .screenshot{
+        height: 130vh;
+        width: auto;
+    }
+
+    .screenshotinfo {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .screenshot-photo {
+        height: 50vh;
+        width: 100%;
+        text-align: center;
+    }
+    .screenshot-photo img {
+        height: 50vh;
+        width: 50vw;
+    }
+    .screenshot-text {
+        margin: 1rem auto;
+        width: 90%;
+        text-align: center;
+    }
+
+    .signin {
+        width: 100%;
+    }
+}
+
+/* 📏 For screens less than 830px */
+@media (max-width: 830px) {
+    .info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100vw;
+    }
+
+    .info-data h1 , h2{
+        margin: 5px;
+    }
+    
+    .info-data h2{
+        font-weight: 400;
+    }
+
+    .info-photo {
+        order: -1;
+        width: 100%;
+        text-align: center;
+    }
+
+    .info-data {
+        width: 90%;
+        text-align: center;
+        margin: 1rem auto;
+    }
+
+    .screenshotinfo {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .screenshot-photo {
+        width: 100%;
+        text-align: center;
+    }
+
+    .screenshot-text {
+        margin: 1rem auto;
+        width: 90%;
+        text-align: center;
+    }
+
+    .signin {
+        width: 100%;
+    }
+}
+
+/* 📏 For screens less than 500px */
+@media (max-width: 500px) {
+    .screenshot {
+        width: 100vw;
+        height: auto;
+        border-radius: 1.5rem;
+        margin-left: 1rem;
+    }
+
+    .signin {
+        height: 2.5rem;
+        width: 80vw;
+        font-size: 0.9rem;
+        position: relative;
+        right: -25px;
+    }
+
+    .signin img {
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+
+    .screenshot-text h2 {
+        font-size: 1.2rem;
+        margin: 1rem;
+    }
+
+    .info-photo div img{
+        height: auto;
+        width: 100vw;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .info-data h1{
+        font-size: 2.3rem;
+    }
+    .info-data h2{
+        font-size: 1.5rem;
+    }
+
+    .screenshot-photo img {
+        height: auto;
+        width: 100vw;
+    }
+
+    .screenshot-photo video {
+        height: auto;
+        width: 100vw;
+    }
+
+    .screenshot-photo {
+        margin-left: 0rem;
+        flex: 1;
+    }
+}
+
+/* 📏 For screens less than 400px */
+@media (max-width: 400px) {
+    .info-data h1 {
+        font-size: 1.5rem;
+    }
+
+    .info-data h2 {
+        font-size: 1rem;
+    }
+
+    .signin {
+        height: 2.2rem;
+        width: 14rem;
+        font-size: 0.8rem;
+    }
+
+    .signin img {
+        height: 1.2rem;
+        width: 1.2rem;
+    }
+
+    .screenshot {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .screenshot-text {
+        text-align: center;
+        font-size: 1rem;
+    }
+}
+
+/* 📏 For screens less than 300px */
+@media (max-width: 300px) {
+    .info-data h1 {
+        font-size: 1.2rem;
+    }
+
+    .info-data h2 {
+        font-size: 0.9rem;
+    }
+
+    .signin {
+        height: 2rem;
+        width: 12rem;
+        font-size: 0.7rem;
+    }
+
+    .signin img {
+        height: 1rem;
+        width: 1rem;
+    }
+
+    .screenshot {
+        padding: 0.5rem;
+    }
+
+    .screenshot-text {
+        font-size: 0.9rem;
+    }
+}
