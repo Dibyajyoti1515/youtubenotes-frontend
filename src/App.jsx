@@ -1,5 +1,6 @@
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Analytics } from '@vercel/analytics/react';
 import Home from "./homePage.jsx";
 import Signin from "./signinPage.jsx";
 import Login from "./loginPage.jsx";
@@ -20,6 +21,7 @@ function App() {
           <Route path="/folder" element={<Folder />} />
         </Routes>
       </Router>
+      <Analytics></Analytics>
     </>
   )
 }
