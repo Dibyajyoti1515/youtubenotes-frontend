@@ -23,11 +23,18 @@
 .signinform{
     display: flex;
     flex-direction: column;
-    margin-top: 3rem;
+    margin: 1.2rem 0rem;
     align-self: center;
     height: 70vh;
     width: 80vw;
     flex: 1;
+}
+
+.signinform p{
+    position: relative;
+    margin: 0;
+    right: 15rem;
+    font-size: small;
 }
 
 .signinform div{
@@ -107,6 +114,11 @@ button:focus-visible {
         width: 100%;
         height: auto;
         margin-top: 1rem;
+    }
+
+    .signinform p{
+        position: relative;
+        right: 0%;
     }
 
     .signinform div {

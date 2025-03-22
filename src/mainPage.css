@@ -285,9 +285,24 @@ video {
         font-size: 1rem;
     }
 
+    #root{
+        padding: 0% 0% 0% 0%;
+        width: 99%;
+    }
+
+    .screenshot-photo img {
+        height: auto;
+        width: 90vw;
+    }
+
+    .screenshot-photo video {
+        height: auto;
+        width: 90vw;
+    }
+
     .signin {
         height: 2.2rem;
-        width: 14rem;
+        width: 20rem;
         font-size: 0.8rem;
     }
 
@@ -296,10 +311,20 @@ video {
         width: 1.2rem;
     }
 
+    #root .header-style button{
+        margin: 0.5rem;
+    }
+
+    #root .header-style h3{
+        margin-left: 2px;
+        width: 8rem;
+    }
+
     .screenshot {
-        width: 100%;
+        width: 85%;
         padding: 1rem;
     }
+
 
     .screenshot-text {
         text-align: center;

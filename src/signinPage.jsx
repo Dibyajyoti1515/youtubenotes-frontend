@@ -96,8 +96,8 @@ export default function SigninPage() { // Use PascalCase
                 <form onSubmit={handleSubmit} className="signinform">
                     <div className="signinform-Username">
                         <input type="text" name="username" placeholder=" Username" value={formData.username} onChange={handleChangeuser} required />
-                        <p>{usernameMsg}</p>
                     </div>
+                    <p style={{color: "#ff0000"}}>{usernameMsg}</p>
                     <div>
                         <input type="email" name="email" placeholder=" Email" value={formData.email} onChange={handleChange} required />
                     </div>

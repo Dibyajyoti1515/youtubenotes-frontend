@@ -8,7 +8,7 @@ export default function Header(){
         <>
         <header>
             <div className="header-style">
-                <h3>Wlcome! to Note Maker</h3>
+                <h3>Welcome! to Note Maker</h3>
                 <button onClick={() => {navigate("/login")}}>Login</button>
                 <button>Pricing</button>
             </div>

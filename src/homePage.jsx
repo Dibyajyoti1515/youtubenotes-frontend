@@ -35,7 +35,7 @@ const Home = () => {
         
         try {
           const response = await axios.post("https://stream2notes-backend.onrender.com/ytnotes/notes", formData);
-          console.log(response.data);
+          setFormData({...formData, youtube_link: ""});
           navigate("/home",{state: response.data})
         } catch (error) {
           console.log(error);
@@ -46,9 +46,6 @@ const Home = () => {
     return (
         <>
         {/* Toggle Sidebar Button (Only for mobile screens) */}
-        <button className="toggle-sidebar-btn" onClick={() => setSidebarOpen(true)}>
-                ☰
-        </button>
         <div className="homePage">
             <div className={`sidebar-homepage ${sidebarOpen ? "active" : ""}`}>
             <button className="close-sidebar-btn" onClick={() => setSidebarOpen(false)}>❌</button>
@@ -93,6 +90,9 @@ const Home = () => {
             </div>
             <div className="maincontain-homepage">
                 <div className="addytvideo">
+                    <button className="toggle-sidebar-btn" onClick={() => setSidebarOpen(true)}>
+                        ☰
+                    </button>
                     <form onSubmit={handleSubmit}>
                         <input type="text" 
                         placeholder=" Add youtube, tweets or articals..."
@@ -100,8 +100,8 @@ const Home = () => {
                         value={formData.youtube_link} onChange={handleChange} required
                         />
                         <button type="submit">Add+</button>
-                        <button>Pricing</button>
-                        <button>What&apos;s New</button>
+                        <button className="Pricing-homepage">Pricing</button>
+                        <button className="What-homepage" >What&apos;s New</button>
                     </form>
                 </div>
                 <br /><br /><br /><br />
