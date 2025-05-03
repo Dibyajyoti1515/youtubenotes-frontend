@@ -1,5 +1,5 @@
 // import { useNavigate } from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
 import "./mainPage.css"
 import Header from "./component/header.jsx";
 import img1 from "./assets/img1.webp";
@@ -9,19 +9,23 @@ import LandingPage_Graphics2 from "./assets/LandingPage_Graphics__1__i3iGwLmeZ.m
 import askifyYoutube from "./assets/askifyYoutube.mp4"
 import img3 from "./assets/LandingPage_Graphics__3__qka_7CjbS4.png";
 import img4 from "./assets/LandingPage_Graphics__5__H_vxtQae1.webp"
-import googlelogin from "./assets/Google-Logo.png"
+// import googlelogin from "./assets/Google-Logo.png"
+import GoogleAuth from "./GoogleAuth.jsx";
 
 export default function Mainpage(){
     
-    const handleLogin =async (e) => {
-        e.preventDefault();
-        const response = await axios.get("https://stream2notes-backend.onrender.com/ytnotes/google", { withCredentials: true });
-        if (response.status === 200) {
-            console.log("Login successful");
-        } else {
-            console.error("Login failed");
-        }
-    };
+    // const handleLogin = async (e) => {
+    //     e.preventDefault();
+    //     try {
+    //       const response = await axios.get("http://localhost:8080/ytnotes/google", { withCredentials: true });
+    //       if (response.status === 200) {
+    //         console.log("Login successful");
+    //       }
+    //     } catch (error) {
+    //       console.error("Login failed", error);
+    //     }
+    //   };
+      
 
     return(
         <>  
@@ -36,10 +40,9 @@ export default function Mainpage(){
                     <h2>- One click Export to PDF</h2>
                     <h2>- Works on <b>All Websites</b></h2> <br /><br />
                     <h2><b>It&apos;s Free</b></h2>
-                    <button className="signin" onClick={handleLogin}> 
-                        <div><img src={googlelogin} alt="photo" /></div>
-                        <div>&nbsp;&nbsp;Sign in with Google</div>
-                    </button>
+                    {/* <button className="signin" onClick={handleLogin}>  */}
+                        <GoogleAuth/>
+                    {/* </button> */}
                     <h2><b>join us </b></h2>
                 </div>
                 <div className="info-photo">
