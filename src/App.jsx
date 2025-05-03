@@ -7,6 +7,7 @@ import Login from "./loginPage.jsx";
 import MainPage from "./mainPage.jsx";
 import './App.css'
 import Folder from "./folder.jsx";
+import RedirectHandler from "./RedirectHandler.jsx"; 
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="/signin" element={<Signin />} />
           <Route path="/home" element={<Home />} />
           <Route path="/folder" element={<Folder />} />
+          <Route path="/redirect" element={<RedirectHandler />} />
         </Routes>
       </Router>
       <Analytics></Analytics>

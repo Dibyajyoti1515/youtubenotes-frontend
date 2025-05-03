@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 import "./mainPage.css"
 import Header from "./component/header.jsx";
@@ -9,9 +9,14 @@ import LandingPage_Graphics2 from "./assets/LandingPage_Graphics__1__i3iGwLmeZ.m
 import askifyYoutube from "./assets/askifyYoutube.mp4"
 import img3 from "./assets/LandingPage_Graphics__3__qka_7CjbS4.png";
 import img4 from "./assets/LandingPage_Graphics__5__H_vxtQae1.webp"
+import googlelogin from "./assets/Google-Logo.png"
 
 export default function Mainpage(){
-    const navigate = useNavigate();
+    
+    const handleLogin = () => {
+        window.location.href = "https://stream2notes-backend.onrender.com/ytnotes/google";
+    };
+
     return(
         <>  
             <br />
@@ -25,9 +30,9 @@ export default function Mainpage(){
                     <h2>- One click Export to PDF</h2>
                     <h2>- Works on <b>All Websites</b></h2> <br /><br />
                     <h2><b>It&apos;s Free</b></h2>
-                    <button className="signin" onClick={() => navigate("/signin")}> 
-                        <div><img src="https://icon-icons.com/icon/google-logo/169090https://cdn.icon-icons.com/icons2/2699/PNG/512/google_logo_icon_169090.png" alt="photo" /></div>
-                        <div>&nbsp;&nbsp;Sigin in with Google</div>
+                    <button className="signin" onClick={{handleLogin}}> 
+                        <div><img src={googlelogin} alt="photo" /></div>
+                        <div>&nbsp;&nbsp;Sign in with Google</div>
                     </button>
                     <h2><b>join us </b></h2>
                 </div>
