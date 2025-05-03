@@ -36,7 +36,7 @@ export default function Mainpage(){
                     <h2>- One click Export to PDF</h2>
                     <h2>- Works on <b>All Websites</b></h2> <br /><br />
                     <h2><b>It&apos;s Free</b></h2>
-                    <button className="signin" onClick={{handleLogin}}> 
+                    <button className="signin" onClick={handleLogin}> 
                         <div><img src={googlelogin} alt="photo" /></div>
                         <div>&nbsp;&nbsp;Sign in with Google</div>
                     </button>
