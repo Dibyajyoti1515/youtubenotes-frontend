@@ -1,5 +1,5 @@
 // import { useNavigate } from "react-router-dom";
-
+import axios from "axios";
 import "./mainPage.css"
 import Header from "./component/header.jsx";
 import img1 from "./assets/img1.webp";
@@ -13,8 +13,14 @@ import googlelogin from "./assets/Google-Logo.png"
 
 export default function Mainpage(){
     
-    const handleLogin = () => {
-        window.location.href = "https://stream2notes-backend.onrender.com/ytnotes/google";
+    const handleLogin =async (e) => {
+        e.preventDefault();
+        const response = await axios.get("https://stream2notes-backend.onrender.com/ytnotes/google", { withCredentials: true });
+        if (response.status === 200) {
+            console.log("Login successful");
+        } else {
+            console.error("Login failed");
+        }
     };
 
     return(
