@@ -167,6 +167,10 @@ input:focus {
     color: white;
 }
 
+.fontsize{
+    font-size: 1rem;
+    font-weight: 400;
+}
 
 
 /* 🌟 Responsive Design for Different Screen Sizes */

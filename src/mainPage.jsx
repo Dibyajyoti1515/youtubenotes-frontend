@@ -1,5 +1,7 @@
 // import { useNavigate } from "react-router-dom";
-// import axios from "axios";
+import axios from "axios";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./mainPage.css"
 import Header from "./component/header.jsx";
 import img1 from "./assets/img1.webp";
@@ -13,6 +15,7 @@ import img4 from "./assets/LandingPage_Graphics__5__H_vxtQae1.webp"
 import GoogleAuth from "./GoogleAuth.jsx";
 
 export default function Mainpage(){
+    const navigate = useNavigate();
     
     // const handleLogin = async (e) => {
     //     e.preventDefault();
@@ -25,6 +28,23 @@ export default function Mainpage(){
     //       console.error("Login failed", error);
     //     }
     //   };
+
+    //https://stream2notes-backend.onrender.com
+
+    useEffect(() => {
+        axios.get('https://stream2notes-backend.onrender.com/ytnotes/auto-login', { 
+            withCredentials: true 
+        })
+        .then(response => {
+            const googleData = response.data;
+            console.log("Auto-login response:", googleData);
+            navigate("/home", { state: googleData }); 
+        })
+        .catch(() => {
+          console.log("Auto-login failed.");
+        });
+    }, []);
+      
       
 
     return(

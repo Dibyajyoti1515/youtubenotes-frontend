@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import './homePage.css'
 import house from './assets/house-solid.svg'
 import faqlogo from './assets/question-solid.svg'
-import userimg from './assets/man-only-face-vector-23318795.jpg'
 import trash from './assets/trash-solid.svg'
 import VideoCard from "./component/videocard.jsx";
 import filelogo from "./assets/file-regular.svg"
@@ -15,10 +14,10 @@ const Home = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const userData = location.state || {}; 
+    console.log(userData);
     const userdataVideo = userData.notes;
     const user_id = userData.user.id
     const [sidebarOpen, setSidebarOpen] = useState(false);
-    console.log(userData);
     
     const [formData, setFormData] = useState({
         user_id: user_id,
@@ -62,7 +61,7 @@ const Home = () => {
                     <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FAQ</span>
                 </div>
                 <div className="sidebar-elements sidebar-user-img">
-                    <img src={userimg} alt="User image" />
+                    <img src={userData.user.picture} alt="User image" />
                     <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{userData.user.name}</span>
                 </div>
                 <div className="companylogo">
@@ -84,7 +83,7 @@ const Home = () => {
                     <hr />
                 </div>
                 <div>
-                    <h3>Welcome! <span className="text-purpale">{userData.user.username}</span></h3>
+                    <h3>Welcome! <br /><span className="text-purpale fontsize">{userData.user.email}</span></h3>
                     <h3>To Note Maker</h3>
                 </div>
             </div>
