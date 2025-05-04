@@ -17,18 +17,7 @@ import GoogleAuth from "./GoogleAuth.jsx";
 export default function Mainpage(){
     const navigate = useNavigate();
     
-    // const handleLogin = async (e) => {
-    //     e.preventDefault();
-    //     try {
-    //       const response = await axios.get("http://localhost:8080/ytnotes/google", { withCredentials: true });
-    //       if (response.status === 200) {
-    //         console.log("Login successful");
-    //       }
-    //     } catch (error) {
-    //       console.error("Login failed", error);
-    //     }
-    //   };
-
+    // http://localhost:8080
     //https://stream2notes-backend.onrender.com
 
     useEffect(() => {
@@ -37,7 +26,7 @@ export default function Mainpage(){
         })
         .then(response => {
             const googleData = response.data;
-            console.log("Auto-login response:", googleData);
+            // console.log("Auto-login response:", googleData);
             navigate("/home", { state: googleData }); 
         })
         .catch(() => {
