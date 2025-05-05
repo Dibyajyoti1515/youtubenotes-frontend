@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 import './homePage.css'
 import house from './assets/house-solid.svg'
@@ -14,34 +15,66 @@ const Home = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const userData = location.state || {}; 
-    console.log(userData);
-    const userdataVideo = userData.notes;
-    const user_id = userData.user.id
+    console.log(userData.user); 
+    const user_id = userData.user.id; 
+    console.log(user_id); 
     const [sidebarOpen, setSidebarOpen] = useState(false);
+    const [readyNotes, setReadyNotes] = useState([]);
+
+    useEffect(() => {
+        if (!userData.user) {
+            navigate("/"); 
+        }
+        console.log("User eedata:", userData.user); //
+        const fetchNotes = async () => {
+            if (!user_id) return; // 
+            console.log("Fetching notes for user ID:", user_id);
+
+            try {
+                const response = await axios.post("https://stream2notes-backend.onrender.com/ytnotes/notes", {
+                    user_id: user_id
+                });
+                console.log("Fetched notes:", response.notes);
+                setReadyNotes(response.data.notes);
     
+            } catch (error) {
+                console.error("❌ Error fetching notes:", error);
+            }
+        };
+    
+        fetchNotes();
+    }, [user_id]);
+    
+    console.log(readyNotes); // 
     const [formData, setFormData] = useState({
-        user_id: user_id,
         youtube_link: "",
-        note_pdf_link: "https://www.iitk.ac.in/esc101/share/downloads/javanotes5.pdf"
+        note_pdf_link: "",
     });
 
     const handleChange = (e) => {
-        setFormData({...formData, [e.target.name]: e.target.value});
+        const { name, value } = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }));
     }
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        
-        try {
-          const response = await axios.post("https://stream2notes-backend.onrender.com/ytnotes/notes", formData);
-          setFormData({...formData, youtube_link: ""});
-          navigate("/home",{state: response.data})
-        } catch (error) {
-          console.log(error);
-        }
-    };
+        console.log("Form data:", formData); //
+    }
 
-    console.log(userdataVideo);
+    const handleLogout = async () => {
+        try {
+          await axios.get("https://stream2notes-backend.onrender.com/ytnotes/logout", {
+            withCredentials: true,
+          });
+          navigate("/"); // Redirect to login
+        } catch (error) {
+          console.error("Logout failed:", error);
+        }
+      };
+    
+    
     return (
         <>
         {/* Toggle Sidebar Button (Only for mobile screens) */}
@@ -85,6 +118,7 @@ const Home = () => {
                 <div>
                     <h3>Welcome! <br /><span className="text-purpale fontsize">{userData.user.email}</span></h3>
                     <h3>To Note Maker</h3>
+                    <button onClick={handleLogout}>Log out</button>
                 </div>
             </div>
             <div className="maincontain-homepage">
@@ -108,14 +142,24 @@ const Home = () => {
                 <br />
                 <hr />
                 <div className="videos-notes">
-                    {userdataVideo?.map((iteam)=>(
-                        <VideoCard key={iteam.id} id={iteam.id} youtubeLink={iteam.youtube_link} notePdfLink={iteam.note_pdf_link}></VideoCard>
-                    ))}
+                    
                 </div>
                 <br /><br />
                 <hr />
                 <br />
-                <div><h2>Your <b>Notes</b></h2></div>
+                <div>
+                <div className="videos-notes">
+                    {readyNotes?.map((item) => (
+                        <VideoCard
+                        key={item.id}
+                        id={item.id}
+                        youtubeLink={item.youtube_link}
+                        notePdfLink={item.note_pdf_link}
+                        />
+                    ))}
+                </div>
+
+                </div>
             </div>
         </div>
         </>
