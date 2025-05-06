@@ -82,8 +82,13 @@ const Home = () => {
             <div className={`sidebar-homepage ${sidebarOpen ? "active" : ""}`}>
             <button className="close-sidebar-btn" onClick={() => setSidebarOpen(false)}>❌</button>
                 <div className="companylogo">
-                    <br /><br /><br /><br /><br /><br />
+                    <br /><br /><br /><br />
                     <hr />
+                </div>
+                <div 
+                className="sidebar-elements chrome_extension"
+                onClick={() => navigate("/chexe")}>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chrome extension</span>
                 </div>
                 <div className="sidebar-elements">
                     <img src={house} alt="Homelogo" />

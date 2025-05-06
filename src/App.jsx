@@ -5,6 +5,7 @@ import Home from "./homePage.jsx";
 import Signin from "./signinPage.jsx";
 import Login from "./loginPage.jsx";
 import MainPage from "./mainPage.jsx";
+import ChromeExtension from "./chrome-extension.jsx";
 import './App.css'
 import Folder from "./folder.jsx";
 import RedirectHandler from "./RedirectHandler.jsx"; 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/folder" element={<Folder />} />
           <Route path="/redirect" element={<RedirectHandler />} />
+          <Route path="/chexe" element={<ChromeExtension />} />
         </Routes>
       </Router>
       <Analytics></Analytics>
