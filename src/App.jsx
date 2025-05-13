@@ -9,6 +9,7 @@ import ChromeExtension from "./chrome-extension.jsx";
 import './App.css'
 import Folder from "./folder.jsx";
 import RedirectHandler from "./RedirectHandler.jsx"; 
+import PrivacyPolicy from "./PrivacyPolicy.jsx";
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/folder" element={<Folder />} />
           <Route path="/redirect" element={<RedirectHandler />} />
           <Route path="/chexe" element={<ChromeExtension />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
       </Router>
       <Analytics></Analytics>
